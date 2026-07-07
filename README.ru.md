@@ -5,15 +5,15 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Tier](https://img.shields.io/badge/tier-junior-1d76db)
 
-**English** · [Русский](README.ru.md)
+**[English](README.md)** · Русский
 
-Hands-on implementations of the data structures interviewers keep asking about.
+Рабочие реализации структур данных, о которых на собесах спрашивают снова и снова.
 
-HTTP API on `:8084` plus a tiny CLI for offline demos.
+HTTP API на `:8084` и небольшой CLI для офлайн-демо.
 
-## Why this repo exists
+## Зачем этот репозиторий
 
-I wanted one place to **show** LRU, rate limiters, consistent hashing, and graph search — not just talk about them on interviews.
+Нужно было одно место, где можно **показать** LRU, rate limiter'ы, consistent hashing и поиск по графу — а не только рассказывать на интервью.
 
 ## CLI
 
@@ -22,25 +22,25 @@ go run ./cmd/algo bench-lru
 go run ./cmd/algo graph-demo
 ```
 
-## HTTP (sample)
+## HTTP (примеры)
 
 ```bash
 make docker-up
 
-# LRU memory backend
+# LRU в памяти
 curl -X POST localhost:8084/api/v1/lru/put -d '{"key":"a","value":"1"}'
 curl localhost:8084/api/v1/lru/get?key=a
 
 # Top-K
 curl -X POST localhost:8084/api/v1/topk -d '{"k":2,"items":[{"value":"a","score":1},{"value":"b","score":9}]}'
 
-# Graph BFS
+# BFS по графу
 curl -X POST localhost:8084/api/v1/graph/path -d '{"from":"A","to":"D","graph":{"A":["B","C"],"B":["D"],"C":["D"],"D":[]}}'
 ```
 
-Full complexity table: [COMPLEXITY.md](COMPLEXITY.md)
+Таблица сложностей: [COMPLEXITY.ru.md](COMPLEXITY.ru.md)
 
-## Modules
+## Модули
 
 LRU · token bucket · sliding window · consistent hash · top-K heap · BFS/DFS · worker pool
 

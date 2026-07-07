@@ -22,7 +22,6 @@ func (h *minHeap) Pop() any {
 	return item
 }
 
-// TopK returns k highest-scored items. O(n log k).
 func TopK(items []Item, k int) []Item {
 	if k <= 0 || len(items) == 0 {
 		return nil

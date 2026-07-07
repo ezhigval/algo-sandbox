@@ -2,7 +2,6 @@ package lru
 
 import "container/list"
 
-// Cache is an O(1) LRU cache backed by list + map.
 type Cache struct {
 	cap   int
 	items map[string]*list.Element

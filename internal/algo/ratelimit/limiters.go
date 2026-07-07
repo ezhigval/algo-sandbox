@@ -5,10 +5,9 @@ import (
 	"time"
 )
 
-// TokenBucket allows burst traffic with steady refill rate.
 type TokenBucket struct {
 	mu         sync.Mutex
-	rate       float64 // tokens per second
+	rate       float64
 	capacity   float64
 	tokens     float64
 	lastRefill time.Time
@@ -45,7 +44,6 @@ func (b *TokenBucket) Allow() bool {
 	return true
 }
 
-// SlidingWindow counts events in a rolling time window (in-memory).
 type SlidingWindow struct {
 	mu     sync.Mutex
 	limit  int
@@ -64,7 +62,6 @@ func (s *SlidingWindow) Allow() bool {
 	now := time.Now()
 	cutoff := now.Add(-s.window)
 
-	// drop old
 	i := 0
 	for _, t := range s.events {
 		if t.After(cutoff) {

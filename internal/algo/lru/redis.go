@@ -8,7 +8,6 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-// RedisCache approximates LRU using sorted set scores as access time.
 type RedisCache struct {
 	client *redis.Client
 	prefix string

@@ -1,5 +1,10 @@
 # algo-sandbox
 
+![Go](https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white)
+[![CI](https://github.com/ezhigval/algo-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/ezhigval/algo-sandbox/actions/workflows/ci.yml)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Tier](https://img.shields.io/badge/tier-junior-1d76db)
+
 Hands-on implementations of the data structures interviewers keep asking about.
 
 HTTP API on `:8084` plus a tiny CLI for offline demos.
